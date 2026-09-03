@@ -61,6 +61,16 @@
     justify-content:center;
   }
   .top-refresh:active{ background: rgba(238,230,213,0.18); }
+  .refresh-note{
+    position: absolute;
+    top: 2px;
+    right: 42px;
+    max-width: 120px;
+    font-size: 9.5px;
+    line-height: 1.3;
+    color: rgba(238,230,213,0.45);
+    text-align: right;
+  }
   .eyebrow{
     display:flex;
     align-items:center;
@@ -352,6 +362,7 @@
 <header>
   <div class="header-inner">
     <button id="refreshBtn" class="top-refresh" title="Update catalogue from Canva">↻</button>
+    <div class="refresh-note">Please, only Vinod is allowed to click this button</div>
     <div class="eyebrow">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0"/><path d="M12 3v9"/><path d="M8 6h8l-1 6H9L8 6z"/></svg>
       Seven Seas Ships &amp; Boats Trading
