@@ -45,7 +45,25 @@
   .header-inner{
     max-width: 720px;
     margin: 0 auto;
+    position: relative;
   }
+  .top-refresh{
+    position: absolute;
+    top: -6px;
+    right: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(238,230,213,0.08);
+    border: 1px solid rgba(238,230,213,0.16);
+    color: rgba(238,230,213,0.8);
+    font-size: 16px;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .top-refresh:active{ background: rgba(238,230,213,0.18); }
   .eyebrow{
     display:flex;
     align-items:center;
@@ -160,15 +178,16 @@
 
   .card .thumb{
     width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #DED2B4;
+    aspect-ratio: 3 / 4;
+    background: var(--card);
     overflow: hidden;
     position: relative;
+    padding: 8px;
   }
   .card .thumb img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
   }
   .card .page-tag{
@@ -285,28 +304,12 @@
 
   footer{
     max-width: 720px;
-    margin: 40px auto 0;
-    padding: 22px 16px 40px;
-    border-top: 1px solid var(--line);
+    margin: 30px auto 0;
+    padding: 18px 16px 34px;
     text-align: center;
-  }
-  footer .foot-note{
-    font-size: 11.5px;
+    font-size: 11px;
     color: var(--muted);
-    margin-bottom: 12px;
-    line-height: 1.5;
   }
-  .refresh-btn{
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    font-family: var(--sans);
-    font-size: 11.5px;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  .refresh-btn:active{ background: rgba(10,34,51,0.05); }
 
   .lock-overlay{
     position: fixed;
@@ -351,6 +354,7 @@
 
 <header>
   <div class="header-inner">
+    <button id="refreshBtn" class="top-refresh" title="Update catalogue from Canva">↻</button>
     <div class="eyebrow">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0"/><path d="M12 3v9"/><path d="M8 6h8l-1 6H9L8 6z"/></svg>
       Seven Seas Ships &amp; Boats Trading
@@ -381,10 +385,7 @@
   </div>
 </main>
 
-<footer>
-  <div class="foot-note">If new products were added or updated in Canva recently, refresh the catalogue below.</div>
-  <button id="refreshBtn" class="refresh-btn">↻ Update catalogue from Canva</button>
-</footer>
+<footer>Seven Seas Ships &amp; Boats Trading — internal product catalogue</footer>
 
 <div class="viewer" id="viewer">
   <button class="viewer-close" id="viewerClose">&times;</button>
